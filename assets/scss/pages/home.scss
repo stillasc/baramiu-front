@@ -1,0 +1,363 @@
+// Variable
+@import "../variables/variables";
+
+// Mixins
+@import "../mixins/mixins";
+
+// Fonts
+@import "../fonts/fonts";
+
+// Components
+@import "../components/components";
+
+
+.home-page{
+ background: $back;
+padding: 0 10px;
+
+
+/**************************************************
+ * SECTION: hero-section
+ **************************************************/
+.hero-section{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background:   linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url("../uploads/background.png");;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  .top-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .mid-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+
+    .title{ 
+      font-size: clamp(80px, 10vw, 180px);
+      color: $back;
+      margin: 0;
+    } 
+  }
+  
+  .bottom-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .box{
+    border-radius: 10px;
+    background: rgb(123 61 61 / 53%);
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     font-size: clamp(80px, 10vw, 130px);
+    font-weight: 700;
+    color: $back;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .red-box{
+    background: $back;
+    color: $main;
+  }
+}
+
+
+
+/**************************************************
+ * SECTION: cat-boxes
+ **************************************************/
+.cat-boxes{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin-top: 50px;
+
+  .cat-box{
+    width: 31%;
+    border: 1px solid #0000001c;
+    border-radius: 16px;
+    .cat-image{
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+    .content{
+      padding: 5px;
+      .title{
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .paragraph{
+        font-size: 16px;
+        font-weight: 400;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .btn-show{
+        margin-bottom: 10px;
+        .link{
+          width: fit-content;
+          border-radius: 20px;
+          padding: 2px;
+          padding-left: 10px;
+          background: $white;
+          font-size: 15px;
+          font-weight: 400;
+          color: $text;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        i{
+          &::before{
+            background: $main;
+            color: $back;
+            border-radius: 18px;
+            padding: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**************************************************
+ * SECTION: why-baramiu
+ **************************************************/
+.why-baramiu{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-top: 70px;
+  .left-col{
+    width: 48%;
+    h3{
+      font-size: 22px;
+      font-weight: 500;
+    }
+    p{
+      text-align: justify;
+      color: $text;
+      font-size: 15px;
+    }
+  }
+
+  .right-col{
+    width: 48%;
+    background: $secondry;
+    border-radius: 18px;
+    padding: 15px;
+    h2{
+      font-size: 30px;
+      color: $back;
+      font-weight: 500;
+    }
+    h3{
+      font-size: 40px;
+      font-weight: 800;
+      color: $back;
+    }
+  }
+}
+
+
+/**************************************************
+ * SECTION: gallery
+ **************************************************/
+.gallery{
+
+  margin-top: 70px;
+
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 35px;
+    font-weight: 700;
+    color: $main;
+    img{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .gallery-content {
+    padding: 120px 0;
+    overflow: hidden;
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .subtitle {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: .6;
+        }
+
+        .title {
+            font-size: clamp(32px, 5vw, 50px);
+            font-weight: 800;
+            margin: 0;
+        }
+    }
+
+    .gallery-slider {
+
+        .slick-list {
+            overflow: visible;
+        }
+
+        .slick-track {
+            display: flex;
+        }
+    }
+
+    .gallery-item {
+        padding: 12px;
+
+        img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 24px;
+            display: block;
+
+            transition: all .5s ease;
+        }
+
+        &:hover {
+
+            img {
+                transform: translateY(-10px) scale(1.03);
+            }
+        }
+    }
+
+    .slick-slide {
+        opacity: .6;
+        transition: .4s;
+    }
+
+    .slick-active {
+        opacity: 1;
+    }
+
+    .slick-dots {
+        bottom: -60px;
+
+        li {
+
+            button:before {
+                font-size: 12px;
+            }
+        }
+    }
+  }
+
+}
+
+
+} 
+
+
+
+ 
+
+@media screen and (min-width:769px) and (max-width:1100px) {
+    
+  .home-page{
+
+    .cat-boxes{
+      .cat-box{
+        width: 48%;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+@media screen and (max-width:768px) {
+
+  .home-page{
+    
+    .hero-section{
+      padding: 20px;
+      .mid-row{
+        .title{
+          display: none;
+        }
+      }
+      .box{
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    .cat-boxes{
+      .cat-box{
+        width: 100%;
+      }
+    }
+
+    .why-baramiu{
+      flex-wrap: wrap;
+      .left-col{
+        width: 100%;
+      }
+      .right-col{
+        width: 100%;
+      }
+    }
+ 
+  }
+
+}

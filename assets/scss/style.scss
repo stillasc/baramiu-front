@@ -1,0 +1,64 @@
+// Variable
+@import "../scss/variables/variables";
+
+// Mixins
+@import "../scss/mixins/mixins";
+
+// Fonts
+@import "../scss/fonts/fonts";
+
+// Icon Fonts 
+@import "../scss/icon-fonts/icon-fonts";
+
+// // Base
+// @import "../scss/base/base";
+
+// Components
+@import "../scss/components/components";
+
+// Utilities
+@import "../scss/utilities/utilities";
+
+
+ 
+   
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'kalame';
+    
+ }
+
+
+
+.main-container{
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+a{
+    text-decoration: none !important;
+}
+
+
+
+
+#cat {
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    z-index: 999999;
+    pointer-events: none;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    transition: left .15s linear, top .15s linear;
+}
